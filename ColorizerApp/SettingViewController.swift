@@ -8,20 +8,19 @@
 import UIKit
 
 class SettingViewController: UIViewController {
+    @IBOutlet var colorView: UIView!
     
-    @IBOutlet weak var colorView: UIView!
+    @IBOutlet var redLabel: UILabel!
+    @IBOutlet var greenLabel: UILabel!
+    @IBOutlet var blueLabel: UILabel!
     
-    @IBOutlet weak var redLabel: UILabel!
-    @IBOutlet weak var greenLabel: UILabel!
-    @IBOutlet weak var blueLabel: UILabel!
+    @IBOutlet var redSlider: UISlider!
+    @IBOutlet var greenSlider: UISlider!
+    @IBOutlet var blueSlider: UISlider!
     
-    @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var blueSlider: UISlider!
-    
-    @IBOutlet weak var redTextField: UITextField!
-    @IBOutlet weak var greenTextField: UITextField!
-    @IBOutlet weak var blueTextField: UITextField!
+    @IBOutlet var redTextField: UITextField!
+    @IBOutlet var greenTextField: UITextField!
+    @IBOutlet var blueTextField: UITextField!
     
     var color: UIColor!
     var delegate: SettingsViewControllerDelegate!
@@ -38,18 +37,15 @@ class SettingViewController: UIViewController {
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         
-        
         redSlider.value = Float(color.rgba.red)
         greenSlider.value = Float(color.rgba.green)
         blueSlider.value = Float(color.rgba.blue)
         
-
         setColor()
         setValueForTF(for: redTextField, greenTextField, blueTextField)
         setValueForLabels(for: redLabel, greenLabel, blueLabel)
     }
     
-
     @IBAction func doneButtonPressed() {
         delegate.setBackgroundColor(with: colorView.backgroundColor!)
         dismiss(animated: true)
@@ -71,7 +67,7 @@ class SettingViewController: UIViewController {
     }
     
     private func setValueForLabels(for labels: UILabel...) {
-        labels.forEach{ label in
+        labels.forEach { label in
             switch label {
             case redLabel:
                 redLabel.text = string(form: redSlider)
@@ -82,8 +78,6 @@ class SettingViewController: UIViewController {
             }
         }
     }
-    
-   
     
     private func string(form slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
@@ -98,13 +92,13 @@ class SettingViewController: UIViewController {
         )
     }
 }
+
 extension SettingViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
-   
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let newNumber = textField.text else { return false }
         guard let numberValue = Float(newNumber) else { return false }
@@ -117,13 +111,13 @@ extension SettingViewController: UITextFieldDelegate {
             blueSlider.value = numberValue
         }
         setColor()
-        setValueForLabels(for: redLabel,greenLabel, blueLabel)
+        setValueForLabels(for: redLabel, greenLabel, blueLabel)
         textField.resignFirstResponder()
         return true
     }
     
     private func setValueForTF(for textFields: UITextField...) {
-        textFields.forEach{ textField in
+        textFields.forEach { textField in
             switch textField {
             case redTextField:
                 redTextField.text = string(form: redSlider)
@@ -132,7 +126,6 @@ extension SettingViewController: UITextFieldDelegate {
             default:
                 greenTextField.text = string(form: greenSlider)
             }
-            
         }
     }
 }
@@ -148,5 +141,3 @@ extension UIColor {
         return (red, green, blue, alpha)
     }
 }
-
-
