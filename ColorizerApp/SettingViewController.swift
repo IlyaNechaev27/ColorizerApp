@@ -40,11 +40,10 @@ class SettingViewController: UIViewController {
         blueSlider.value = Float(color.rgba.blue)
 
         setColor()
-        setValue(for: redLabel, greenLabel, blueLabel)
+        setValueForTF(for: redTextField, greenTextField, blueTextField)
+        setValueForLabels(for: redLabel, greenLabel, blueLabel)
     }
-    override func viewWillLayoutSubviews() {
-        colorView.backgroundColor = color
-    }
+    
 
     @IBAction func doneButtonPressed() {
         delegate.setBackgroundColor(with: colorView.backgroundColor!)
@@ -56,14 +55,17 @@ class SettingViewController: UIViewController {
         switch sender {
         case redSlider:
             redLabel.text = string(form: redSlider)
+            redTextField.text = string(form: redSlider)
         case blueSlider:
             blueLabel.text = string(form: blueSlider)
+            blueTextField.text = string(form: blueSlider)
         default:
             greenLabel.text = string(form: greenSlider)
+            greenTextField.text = string(form: greenSlider)
         }
     }
     
-    private func setValue(for labels: UILabel...) {
+    private func setValueForLabels(for labels: UILabel...) {
         labels.forEach{ label in
             switch label {
             case redLabel:
@@ -75,6 +77,8 @@ class SettingViewController: UIViewController {
             }
         }
     }
+    
+   
     
     private func string(form slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
@@ -88,7 +92,33 @@ class SettingViewController: UIViewController {
             alpha: 1
         )
     }
+}
+extension SettingViewController {
+//    
+//    private func setValuesFromTF(for textFields: UITextField...){
+//        textFields.forEach{ textField in
+//            switch textField {
+//            case redTextField:
+//                redSlider.value = Float(redTextField.text)
+//            default:
+//                blueSlider.value = Float(blueTextField.text)
+//            }
+//        }
+//    }
     
+    private func setValueForTF(for textFields: UITextField...) {
+        textFields.forEach{ textField in
+            switch textField {
+            case redTextField:
+                redTextField.text = string(form: redSlider)
+            case blueTextField:
+                blueTextField.text = string(form: blueSlider)
+            default:
+                greenTextField.text = string(form: greenSlider)
+            }
+            
+        }
+    }
 }
 
 extension UIColor {
@@ -102,4 +132,5 @@ extension UIColor {
         return (red, green, blue, alpha)
     }
 }
+
 

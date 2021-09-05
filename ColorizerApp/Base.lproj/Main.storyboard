@@ -90,22 +90,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="f04-pj-PB3">
-                                        <rect key="frame" x="12" y="19" width="25" height="74"/>
+                                        <rect key="frame" x="12" y="19" width="0.0" height="74"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3R-e7-1l3">
-                                                <rect key="frame" x="0.0" y="0.0" width="25" height="16"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqA-kO-MBB">
-                                                <rect key="frame" x="0.0" y="29" width="25" height="16"/>
+                                                <rect key="frame" x="0.0" y="29" width="0.0" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSo-zo-Bfv">
-                                                <rect key="frame" x="0.0" y="58" width="25" height="16"/>
+                                                <rect key="frame" x="0.0" y="58" width="0.0" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
@@ -113,22 +113,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="ITG-wY-Jfo">
-                                        <rect key="frame" x="49" y="2" width="289" height="108"/>
+                                        <rect key="frame" x="24" y="2" width="345" height="108"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cBR-NC-JCw">
-                                                <rect key="frame" x="-2" y="0.0" width="293" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="349" height="31"/>
                                                 <connections>
                                                     <action selector="rgbSlider:" destination="pja-tD-jpN" eventType="valueChanged" id="vHh-zv-Eba"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ed0-fB-hD3">
-                                                <rect key="frame" x="-2" y="39" width="293" height="31"/>
+                                                <rect key="frame" x="-2" y="39" width="349" height="31"/>
                                                 <connections>
                                                     <action selector="rgbSlider:" destination="pja-tD-jpN" eventType="valueChanged" id="WZV-6N-x7T"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="JhQ-iM-lyI">
-                                                <rect key="frame" x="-2" y="78" width="293" height="31"/>
+                                                <rect key="frame" x="-2" y="78" width="349" height="31"/>
                                                 <connections>
                                                     <action selector="rgbSlider:" destination="pja-tD-jpN" eventType="valueChanged" id="2vh-oU-5cA"/>
                                                 </connections>
@@ -136,20 +136,20 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ETC-Sc-CiB">
-                                        <rect key="frame" x="350" y="0.0" width="32" height="112"/>
+                                        <rect key="frame" x="381" y="0.0" width="1" height="112"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fss-vM-q7g">
-                                                <rect key="frame" x="0.0" y="0.0" width="32" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="11Z-35-yxd">
-                                                <rect key="frame" x="0.0" y="39" width="32" height="34"/>
+                                                <rect key="frame" x="0.0" y="39" width="1" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="skD-BO-UxV">
-                                                <rect key="frame" x="0.0" y="78" width="32" height="34"/>
+                                                <rect key="frame" x="0.0" y="78" width="1" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
