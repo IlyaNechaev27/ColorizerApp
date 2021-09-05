@@ -29,6 +29,10 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        redTextField.delegate = self
+        blueTextField.delegate = self
+        greenTextField.delegate = self
+        
         colorView.layer.cornerRadius = 15
         
         redSlider.minimumTrackTintColor = .red
@@ -38,6 +42,7 @@ class SettingViewController: UIViewController {
         redSlider.value = Float(color.rgba.red)
         greenSlider.value = Float(color.rgba.green)
         blueSlider.value = Float(color.rgba.blue)
+        
 
         setColor()
         setValueForTF(for: redTextField, greenTextField, blueTextField)
@@ -93,18 +98,29 @@ class SettingViewController: UIViewController {
         )
     }
 }
-extension SettingViewController {
-//    
-//    private func setValuesFromTF(for textFields: UITextField...){
-//        textFields.forEach{ textField in
-//            switch textField {
-//            case redTextField:
-//                redSlider.value = Float(redTextField.text)
-//            default:
-//                blueSlider.value = Float(blueTextField.text)
-//            }
-//        }
-//    }
+extension SettingViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+   
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let newNumber = textField.text else { return false }
+        guard let numberValue = Float(newNumber) else { return false }
+        switch textField {
+        case redTextField:
+            redSlider.value = numberValue
+        case greenTextField:
+            greenSlider.value = numberValue
+        default:
+            blueSlider.value = numberValue
+        }
+        setColor()
+        setValueForLabels(for: redLabel,greenLabel, blueLabel)
+        textField.resignFirstResponder()
+        return true
+    }
     
     private func setValueForTF(for textFields: UITextField...) {
         textFields.forEach{ textField in
